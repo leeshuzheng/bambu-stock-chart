@@ -1,8 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+I have developed this Single Page Application to display various stock options using React.
+
+For clarity, I have documented my development plan for this technical test.
+
+Note: This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+React was used to scaffold this application to demonstrate my level of competence with the framework.
+
+## Styling
+
+This project will be short-term and small-scale, so I have opted not to use any CSS framework for styling. Components will be styled primarily using CSS Flexbox for efficiency.
+
+## API Calls
+
+API calls will be made to https://www.alphavantage.co/. To optimise load, one API will be called each time a stock option is selected.
+
+Axios is used for simplicity's sake.
+
+JCTFCHSSCP0MKMZ6
+
 
 ### `npm start`
 

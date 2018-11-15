@@ -1,24 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Chart from './Chart';
 
 class App extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      stock: 'MSFT'
+    }
+  }
+
+  getStock(stock) {
+
+    this.setState({
+      stock: stock
+    });
+
+  }
+
   render() {
+
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <button onClick={ () => { this.getStock('AAPL') } }>change stock</button>
+          <Chart stock={ this.state.stock } endpoint="https://www.alphavantage.co/query"/>
         </header>
       </div>
     );
