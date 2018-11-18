@@ -30,7 +30,6 @@ class Chart extends Component {
       .get(endPoint)
       .then(function(response) {
         let data = response.data,
-          metaData = data["Meta Data"],
           addInfo = data["Time Series (Daily)"];
 
         let keysArray = Object.keys(addInfo),
