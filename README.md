@@ -26,7 +26,7 @@ This project will be short-term and small-scale, so I have opted not to use any 
 
 I also avoided using CSS preprocessors as styling is lean for the application of this size.
 
-### Running the app
+## Running the app
 
 Clone this repo, cd to its containing folder<br>
 
