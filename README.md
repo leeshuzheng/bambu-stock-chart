@@ -2,7 +2,7 @@
 
 ![snapshot of application](https://raw.githubusercontent.com/leeshuzheng/bambu-stock-chart/master/snapshot.png)
 
-I have developed this Single Page Application to display various stock options using React. This is part of a technical assessment.
+I have developed this Single Page Application to display various stock options using React. This is part of a technical assessment. This application was scaffolded using Create React App due to time constraints on my end.
 
 For clarity, I have documented a brief development plan for this technical test.
 
