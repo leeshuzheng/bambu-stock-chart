@@ -1,5 +1,57 @@
+body {
+  background: #f0f0f0;
+}
+
+header {
+  background-color: #00282A;
+
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: white;
+  text-align: left;
+
+  padding: 10px 30px;
+
+  font-size: 1.5em;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  background-color: #007378;
+
+  text-align: left;
+  color: white;
+}
+
+footer p {
+  padding-left: 30px;
+}
+
 .App {
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+}
+
+.App__main {
+  display: flex;
+  justify-content: space-around;
+
+  margin: 0 30px;
+
+  min-height: 700px;
+}
+
+.App__label {
+  margin-bottom: 10px;
 }
 
 .App-logo {
@@ -8,25 +60,72 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#chart {
+  border-bottom: 2px solid rgba(0,0,0,.2);
+
+  z-index: 2;
+}
+
+.options {
+  width: 15%;
+  padding-right: 30px;
+}
+
+.options__holder {
+  width: 100%;
+}
+
+.options__holder button {
+  width: 100%;
+  background: rgb(201, 245, 218);
+
+  border: 1px solid transparent;
+
+  color: grey;
+  font-size: 1em;
+
+  padding: 20px;
+
+  text-align: left;
+
+  transition: background .3s ease-out;
+
+  cursor: pointer;
+  outline: none;
+
+  margin-bottom: 2px;
+}
+
+.options__holder button:hover,
+.options__holder button.active {
+  background: rgb(153, 228, 182);
+
+  transition: background .3s ease-in;
+}
+
+.chart {
+  width: 85%;
+}
+
+.chart__holder {
+  position: relative;
+  width: 100%;
+}
+
+.chart__chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
 }
