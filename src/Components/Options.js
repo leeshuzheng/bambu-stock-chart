@@ -5,18 +5,27 @@ class Options extends Component {
     super(props);
 
     this.state = {
-      options: this.props.options
+      options: this.props.options,
+      selectedStock: this.props.selected
     };
   }
 
   render() {
-    const options = this.state.options.map(option => (
-      <div key={option}>
-        <button className="button" onClick={this.props.selectOption}>
-          {option}
-        </button>
-      </div>
-    ));
+    const options = this.state.options.map(option => {
+      let className =
+        option === this.state.selectedStock ? "button active" : "button";
+
+      return (
+        <div key={option}>
+          <button
+            id={option}
+            className={className}
+            onClick={this.props.selectOption} >
+            {option}
+          </button>
+        </div>
+      );
+    });
 
     return <div className="options__holder">{options}</div>;
   }

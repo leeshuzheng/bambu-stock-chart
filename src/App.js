@@ -11,6 +11,7 @@ class App extends Component {
       stock: localStorage.getItem("stockName") || "GOOG",
       options: ["AAPL", "MSFT", "GOOG", "WUBA", "TWTR", "BAYZF", "TSLA"]
     };
+
   }
 
   selectOption(event) {
@@ -48,7 +49,7 @@ class App extends Component {
         <div className="App__main">
           <div className="options">
             <Options
-              options={this.state.options}
+              options={this.state.options} selected={this.state.stock}
               selectOption={this.selectOption.bind(this)}
             />
           </div>
