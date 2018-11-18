@@ -1,65 +1,63 @@
-import React, { Component } from 'react';
-import './App.css';
-import Chart from './Components/Chart';
-import Options from './Components/Options';
+import React, { Component } from "react";
+import "./App.css";
+import Chart from "./Components/Chart";
+import Options from "./Components/Options";
 
 class App extends Component {
-
   constructor() {
     super();
 
-      this.state = {
-        stock: localStorage.getItem('stockName') || 'GOOG',
-        options: ['AAPL', 'MSFT', 'JCP', 'GOOG', 'AMZN']
-      }
-
+    this.state = {
+      stock: localStorage.getItem("stockName") || "GOOG",
+      options: ["AAPL", "MSFT", "GOOG", "WUBA", "TWTR", "BAYZF", "TSLA"]
+    };
   }
 
   selectOption(event) {
-
     event.preventDefault();
 
     let target = event.target,
-    selectedStock = target.innerHTML;
+      selectedStock = target.innerHTML;
 
-    localStorage.setItem('stockName', selectedStock);
+    localStorage.setItem("stockName", selectedStock);
 
-    let allButtons = document.querySelectorAll('.button');
+    let allButtons = document.querySelectorAll(".button");
 
     [].forEach.call(allButtons, function(el) {
-    el.classList.remove("active");
-});
+      el.classList.remove("active");
+    });
 
-    target.classList.add('active');
+    target.classList.add("active");
 
     this.setState({
       stock: selectedStock
-    })
+    });
   }
 
   render() {
-
     return (
       <div className="App">
         <header>
-          <h1>Placeholder OHLC</h1>
+          <h1>Daily Prices (open, high, low, close) and Volumes</h1>
         </header>
 
         <div className="App__label">
-          <p>{ this.state.stock }</p>
+          <p>{this.state.stock}</p>
         </div>
 
         <div className="App__main">
           <div className="options">
-            <Options options={ this.state.options } selectOption={this.selectOption.bind(this)}/>
+            <Options
+              options={this.state.options}
+              selectOption={this.selectOption.bind(this)}
+            />
           </div>
-          <Chart stock={ this.state.stock } endpoint="https://www.alphavantage.co/query"/>
+          <Chart stock={this.state.stock} />
         </div>
 
         <footer>
           <p>Placeholder footer</p>
         </footer>
-
       </div>
     );
   }

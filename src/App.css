@@ -26,6 +26,8 @@ footer {
 
   text-align: left;
   color: white;
+
+  padding: 10px 0;
 }
 
 footer p {
@@ -47,7 +49,7 @@ footer p {
 
   margin: 0 30px;
 
-  min-height: 700px;
+  min-height: 600px;
 }
 
 .App__label {
